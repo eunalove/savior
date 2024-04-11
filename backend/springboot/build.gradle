@@ -51,6 +51,11 @@ dependencies {
 
     // springdoc(swagger+)
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.8'
+
+    //프로메테우스
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+
 }
 
 tasks.named('test') {

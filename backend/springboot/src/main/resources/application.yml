@@ -23,6 +23,8 @@ spring:
         naming:
           physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImp
 
+
+
 server:
   servlet:
     context-path: /api
@@ -35,6 +37,8 @@ server:
       pattern: '%h %l %u %t "%r" %s %b %D'  # access log 출력 패턴
       prefix: access                        # access log 파일이름 prefix
       suffix: .log                          # access log 파일이름 suffix (확장자 포함)
+      mbeanregistry: # 톰캣 메트릭을 모두 사용하려면 다음 옵션을 켜야하며, 옵션을 켜지 않으면 tomcat.session. 관련정보만 노출됩니다
+
 
 logging:
   file:
@@ -45,3 +49,13 @@ logging:
     com.zaxxer.hikari: WARN
 
 #debug: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #  이 설정은 모든 Actuator 엔드포인트를 외부에 노출
+      base-path: /api/actuator # Actuator 엔드포인트의 기본 경로 지정
+  server:
+    port: 9090 # Actuator 엔드포인트가 서비스될 서버의 포트
