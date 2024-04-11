@@ -58,4 +58,4 @@ management:
         include: "*" #  이 설정은 모든 Actuator 엔드포인트를 외부에 노출
       base-path: /api/actuator # Actuator 엔드포인트의 기본 경로 지정
   server:
-    port: 9090 # Actuator 엔드포인트가 서비스될 서버의 포트
+    port: 7070 # Actuator 엔드포인트가 서비스될 서버의 포트
